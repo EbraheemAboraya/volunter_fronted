@@ -101,11 +101,7 @@ class TutorialDataService {
       throw error;
     }
   }
-<<<<<<< HEAD
   async getUserImage(token,id,role) {
-=======
-  async getUserImage(token, id, role) {
->>>>>>> 22eb03461af6c66b73b89c1baac59a4284ee8cde
     try {
       const response = await http.get(`/userImage/${id}/${role}`, {
         headers: {
@@ -256,11 +252,7 @@ class TutorialDataService {
       throw error;
     }
   }
-<<<<<<< HEAD
   async registervolunteer( formData,token) {
-=======
-  async registervolunteer(formData, token) {
->>>>>>> 22eb03461af6c66b73b89c1baac59a4284ee8cde
     try {
       const response = await http.post("/volunteer/signup", formData, {
         headers: {
@@ -275,11 +267,7 @@ class TutorialDataService {
     }
   }
 
-<<<<<<< HEAD
   async registerOrganizer(formData,token) {
-=======
-  async registerOrganizer(formData, token) {
->>>>>>> 22eb03461af6c66b73b89c1baac59a4284ee8cde
     try {
       const response = await http.post("/admin/signup", formData, {
         headers: {
@@ -321,7 +309,6 @@ class TutorialDataService {
     }
   }
 
-<<<<<<< HEAD
   async sendMessage(token,id,message) {
     try {
       const response = await http.post(`/api/messages/send/${id}`,{message}, {
@@ -329,29 +316,13 @@ class TutorialDataService {
           Authorization: `Bearer ${token}`,
         },
       });
-=======
-  async sendMessage(token, id, message) {
-    try {
-      const response = await http.post(
-        `/api/messages/send/${id}`,
-        { message },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
->>>>>>> 22eb03461af6c66b73b89c1baac59a4284ee8cde
       return response;
     } catch (error) {
       console.error("Error signup Organizer:", error);
       throw error;
     }
   }
-<<<<<<< HEAD
   
-=======
->>>>>>> 22eb03461af6c66b73b89c1baac59a4284ee8cde
 }
 
 const tutorialDataServiceInstance = new TutorialDataService();
