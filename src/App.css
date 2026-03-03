@@ -1,0 +1,700 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f6f2f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 15px 23px;
+}
+
+/*------- SideBar Code --------*/
+.Sidebar {
+  height: 100%;
+  width: 223px;
+  background-color: #fff;
+}
+
+.SidebarList {
+  height: 100%;
+  padding: 0;
+  width: 223px;
+  margin-top: auto;
+}
+
+.SidebarList .row {
+  width: 220px;
+  height: 45px;
+  position: relative;
+  border: 1px solid white;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin-bottom: 25px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  color: black;
+  font-family: "Open Sans";
+}
+.SidebarList .logout {
+  position: absolute;
+  bottom: 0;
+  font-family: "Open Sans";
+}
+
+.SidebarList .row:hover {
+  cursor: pointer;
+  background-color: #a8ddf5;
+  border-radius: 10px;
+}
+
+.SidebarList #active {
+  background-color: #a8ddf5;
+  border-radius: 10px;
+}
+.row #icon {
+  flex: 30%;
+  display: grid;
+  place-items: center;
+}
+.row #title {
+  flex: 70%;
+}
+.logo {
+  display: flex; /* Use flexbox to arrange items horizontally */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 110px;
+}
+
+.logo img {
+  width: 50px; /* Adjust image width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add margin between logo and text */
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 32px;
+  font-family: "Open Sans";
+}
+/*------- SideBar Code --------*/
+/*
+/*------- TopBar Code --------*/
+.Topbar {
+  top: 20px;
+  right: 25px;
+  width: calc(
+    100% - (0.2 * 223px)
+  ); /* Adjust width to leave space for sidebar */
+  height: 50px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  padding: 0 20px;
+  z-index: 1000; /* Ensure it's above other content */
+  font-family: "Open Sans";
+}
+
+.Topbar .separator {
+  height: 24px; /* Adjust height of the separator */
+  width: 1px; /* Adjust width of the separator */
+  background-color: #ddd; /* Color of the separator */
+  margin-right: 10px; /* Add margin between separator and profile */
+}
+
+.Topbar .left span {
+  margin-right: 20px; /* Add margin between Home and notification icon */
+}
+
+.Topbar .right {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.Topbar .right .notification {
+  margin-right: 10px; /* Add margin between notification icon and separator */
+}
+
+.Topbar .right .profile {
+  display: flex;
+  align-items: center;
+}
+
+.Topbar .right .profile .profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.Topbar .right .profile .profile-info .larger-span {
+  font-weight: bold;
+  font-size: 15px; /* Adjust font size as needed */
+  margin-left: 10px;
+}
+
+.Topbar .right .profile .profile-info .smaller-span {
+  font-size: 13px;
+  margin-left: 11px;
+  color: #888; /* Grey color */
+}
+/*--------Dashboard Component DESIGN---------*/
+/*
+/*
+/*--------Dashboard Component DESIGN---------*/
+/* CSS for the Dashboard component */
+.Dashboard {
+  margin-top: 18px;
+  margin-left: 5px;
+  font-family: "Open Sans";
+}
+.Dashboard .hey-section {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.Dashboard .grey-text {
+  color: #888; /* Grey color */
+  margin-top: 5px;
+}
+.Dashboard h2 {
+  margin-top: 10px;
+}
+.programs-container {
+  max-height: 65vh; /* Set the maximum height for the scrollable container */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin-top: 20px;
+}
+.Dashboard-programs {
+  display: flex;
+  flex-wrap: wrap; /* Wrap components onto multiple lines */
+}
+.Dashboard-programs > * {
+  width: calc(33.33% - 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.Dashboard-programs > *:nth-child(3n) {
+  margin-right: 20px; /* Remove margin for every third component to ensure they fit evenly */
+}
+/*---------Component DESIGN--------*/
+/*
+/*---------Component DESIGN--------*/
+.program-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 334px;
+  height: 392px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  background-color: #fff;
+  margin-top: 30px;
+}
+.program-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  overflow: hidden;
+}
+.circled-picture {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(75%, -100%);
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.circled-picture img {
+  width: 64px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.program-details {
+  flex: 1;
+  display: flex;
+  padding: 23px;
+}
+.program-details h3 {
+  color: #a19e9e;
+  font-size: 16px;
+  font-weight: 500;
+}
+.program-details p {
+  margin: 8px 0; /* Adjust spacing between paragraphs */
+  font-size: 14px;
+  font-weight: bold;
+}
+.apply-button {
+  position: absolute; /* Set absolute positioning */
+  bottom: 10px; /* Adjust bottom spacing */
+  right: 10px; /* Adjust right spacing */
+  border: none;
+  border-radius: 12px;
+  background-color: #37c0ed;
+  color: white;
+  padding: 10px 105px;
+  cursor: pointer;
+  font-family: "Open Sans";
+  font-size: 17px;
+  margin-right: 5px;
+}
+.apply-button:hover {
+  background-color: #2aa7d7; /* Change color on hover if desired */
+}
+.pending-button {
+  position: absolute; /* Set absolute positioning */
+  bottom: 10px; /* Adjust bottom spacing */
+  right: 10px; /* Adjust right spacing */
+  border-color: #eecd26;
+  border-radius: 12px;
+  background-color: white;
+  color: #eecd26;
+  padding: 10px 105px;
+  cursor: pointer;
+  font-family: "Open Sans";
+  font-size: 17px;
+  font-weight: 1000;
+  margin-right: 10px;
+}
+.program-details-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  scrollbar-width: 0px;
+  max-height: 500px;
+  overflow-y: auto;
+  width: 340px;
+  height: 500px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 18px;
+  z-index: 9999; /* Ensure popup appears above other content */
+}
+.popup-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.cover-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+.profile-image {
+  position: absolute;
+  top: 30%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #646464;
+}
+.feedbacks-section {
+  flex: 1;
+  padding: 23px;
+  height: 300px;
+  overflow-y: auto;
+}
+.feedbacks-section h4 {
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px; /* Add margin bottom to create space between h4 and feedbacks */
+}
+.feedbacks-section p {
+  margin: 8px 0; /* Adjust spacing between paragraphs */
+  font-size: 12px;
+  font-weight: bold;
+}
+.feedback {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%; /* Set width to 100% */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+.feedback-profile-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+.feedback-profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile-info {
+  flex: 1;
+  margin-top: 10px;
+}
+.profile-info h4 {
+  font-size: 14px;
+  font-weight: bold;
+}
+.profile-info p {
+  font-size: 12px;
+  color: #555;
+}
+/* Hide the scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Hide scrollbar track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Hide scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Hide scrollbar corner */
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
+/*---------Progress--------*/
+/*
+/*
+/*---------Progress--------*/
+.Progress {
+  margin-top: 18px;
+  margin-left: 5px;
+  font-family: "Open Sans";
+}
+
+.Progress .Progress-Title {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.Progress .grey-text {
+  color: #888; /* Grey color */
+  margin-top: 5px;
+}
+
+.Progress h2 {
+  margin-top: 10px;
+}
+
+.finish-button {
+  position: absolute; /* Set absolute positioning */
+  bottom: 10px; /* Adjust bottom spacing */
+  right: 10px; /* Adjust right spacing */
+  border: none;
+  border-radius: 12px;
+  background-color: #37c0ed;
+  color: white;
+  padding: 10px 45px;
+  cursor: pointer;
+  font-family: "Open Sans";
+  font-size: 17px;
+  margin-right: 170px;
+}
+
+.finish-button:hover {
+  background-color: #2aa7d7; /* Change color on hover if desired */
+}
+.update-button {
+  position: absolute; /* Set absolute positioning */
+  bottom: 10px; /* Adjust bottom spacing */
+  right: 10px; /* Adjust right spacing */
+  border-color: #99d931;
+  border-radius: 12px;
+  background-color: white;
+  color: #99d931;
+  padding: 8.5px 35px;
+  cursor: pointer;
+  font-family: "Open Sans";
+  font-size: 17px;
+  margin-right: 0px;
+}
+/*--------UPDATE POPUP--------*/
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000; /* Ensure it's above other content */
+}
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+}
+
+.popup-content h2 {
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.popup-content label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.popup-content button {
+  display: flex;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  justify-content: space-between;
+}
+
+.popup-content button:first-child {
+  background-color: #37c0ed; /* Apply button color */
+  color: #fff;
+}
+
+.popup-content button:last-child {
+  background-color: #ccc; /* Cancel button color */
+  color: #333;
+}
+
+.finish-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 140px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.yes-button,
+.cancel-button {
+  padding: 10px 20px;
+  border-color: #d32f2f;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.yes-button {
+  border: none;
+  background-color: #37c0ed;
+  color: #fff;
+}
+
+.cancel-button {
+  background-color: transparent;
+  color: #d32f2f;
+}
+.review-button {
+  position: absolute; /* Set absolute positioning */
+  bottom: 10px; /* Adjust bottom spacing */
+  right: 10px; /* Adjust right spacing */
+  border: none;
+  border-radius: 12px;
+  background-color: #37c0ed;
+  color: white;
+  padding: 10px 65px;
+  cursor: pointer;
+  font-family: "Open Sans";
+  font-size: 17px;
+  margin-right: 45px;
+}
+.review-button:hover {
+  background-color: #2aa7d7; /* Change color on hover if desired */
+}
+/*-------REVIEW POPUP------*/
+.review-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+}
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.review-textarea {
+  width: 80%;
+  height: 100px;
+  margin-bottom: 20px;
+  font-family: "Open Sans";
+  border-radius: 5px;
+}
+.review-textarea::placeholder {
+  text-align: center;
+  line-height: inherit; /* Ensures vertical alignment */
+  vertical-align: middle; /* Centers vertically */
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+/*-------BACKDROP to prevent clicks-----*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 1000; /* Ensure the backdrop is above other elements */
+  pointer-events: auto; /* Enable pointer events to prevent interactions with elements behind it */
+}
+/*----------Organization Pages--------------*/
+/*
+/*
+/*----------Dashboard----------*/
+.programs-header {
+  display: flex;
+  align-items: center;
+}
+.program-count {
+  color: #888888;
+  font-size: 18px;
+  margin-left: 6px; /* Adjust margin as needed */
+}
+.programs-box {
+  margin-top: 17px;
+  width: 90%;
+  max-width: 1120px;
+  height: 70vh;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* Add any other styling as needed */
+}
+
+.programs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.programs-table th,
+.programs-table td {
+  border: none; /* Remove border */
+  padding: 8px;
+}
+
+.programs-table th {
+  background-color: #f0f0f0;
+}
+
+.program-row-container {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  padding: 10px;
+}
+
+.program-row-container .arrow-icon {
+  margin-right: 10px; /* Adjust margin as needed */
+}
+
+.program-row-container .program-image-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.program-row-container .program-info-container {
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+.program-row-container .program-info-container div {
+  margin-right: 20px; /* Adjust margin between elements */
+}
+#program-name {
+  margin-right: 20px;
+}
+#programImage {
+  background-color: white;
+}
