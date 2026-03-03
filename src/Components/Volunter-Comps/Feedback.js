@@ -15,7 +15,7 @@ function Feedback(props) {
       );
       setImageData(`data:${profileImage.image.contentType};base64,${base64String}`);
     }
-  }, [profileImage.image]);
+  }, [profileImage.image, img, data]);
     
   return (
     <div className="feedback">

@@ -138,7 +138,7 @@ Row.propTypes = {
 function VolunteerTable({ programId, programIndex, volunteers }) {
   const handleAccept = async (volunteerId, volunteerIndex) => {
     const token = AuthService.getToken("authToken");
-    const acceptResponse = await TutorialDataService.acceptVolunteer(
+    await TutorialDataService.acceptVolunteer(
       token,
       table[programIndex].programId,
       table[programIndex].volunteers[volunteerIndex].volunteerId
@@ -148,7 +148,7 @@ function VolunteerTable({ programId, programIndex, volunteers }) {
   const handleReject = async (volunteerId, volunteerIndex) => {
     const token = AuthService.getToken("authToken");
 
-    const acceptResponse = await TutorialDataService.rejectVolunteer(
+    await TutorialDataService.rejectVolunteer(
       token,
       table[programIndex].programId,
       table[programIndex].volunteers[volunteerIndex].volunteerId

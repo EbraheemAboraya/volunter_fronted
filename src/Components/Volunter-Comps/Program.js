@@ -22,7 +22,7 @@ function Program(props) {
       );
       setImageData(`data:${program.image.contentType};base64,${base64String}`);
     }
-  }, [program.image]);
+  }, [program.image, img, data]);
 
   useEffect(() => {
     setProgramData(program);

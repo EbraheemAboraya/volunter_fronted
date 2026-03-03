@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FormControl, Input, Select, styled } from "@mui/material";
 import AuthService from "../../AuthService";
 import TutorialDataService from "../../Service";
-const token = AuthService.getToken("authToken");
 
 const StyledFormControl = styled(FormControl)`
   margin-bottom: 20px;

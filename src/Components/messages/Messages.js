@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Message from "./Message"; // Assuming this is imported correctly from the correct file path
 import useGetMessages from "../../hooks/useGetMessages"; // Assuming this custom hook is correctly implemented
 import MessageSkeleton from "../../skeletons/MessageSkeleton";
